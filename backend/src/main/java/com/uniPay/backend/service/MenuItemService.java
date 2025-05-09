@@ -25,6 +25,25 @@ public class MenuItemService {
         return dummyMenuItems;
     }
 
+    public MenuItem getMenuItem(String id) {
+        for (MenuItem dummyMenuItem : dummyMenuItems) {
+            if (dummyMenuItem.getId().equals(id)) {
+                return dummyMenuItem;
+            }
+        }
+        return null;
+    }
+
+    public Boolean deleteMenuItem(String id) {
+        for (int i = 0; i < dummyMenuItems.size(); i++) {
+            if (dummyMenuItems.get(i).getId().equals(id)) {
+                dummyMenuItems.remove(dummyMenuItems.get(i));
+                return true;
+            }
+        }
+        return false;
+    }
+
     public MenuItem addMenuItem(MenuItem menuItem) {
         for (MenuItem dummyMenuItem : dummyMenuItems) {
             if (dummyMenuItem.getId().equals(menuItem.getId())) {

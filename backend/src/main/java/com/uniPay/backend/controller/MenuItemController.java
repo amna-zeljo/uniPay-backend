@@ -37,5 +37,28 @@ public class MenuItemController {
     }
 
 
+    @DeleteMapping("/menuItems/{id}")
+    public ResponseEntity<Boolean> deleteMenuItem(@PathVariable String id) {
+        Boolean isDeleted = menuItemService.deleteMenuItem( id);
+        if(!isDeleted) {
+            return ResponseEntity.status(404).body(false);
+        }
+        return ResponseEntity.ok(isDeleted);
+
+
+    }
+
+    @GetMapping("/menuItems/{id}")
+    public ResponseEntity<MenuItem> getMenuItem(@PathVariable String id) {
+        MenuItem menuItem = menuItemService.getMenuItem(id);
+        if(menuItem != null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(menuItem);
+
+
+    }
+
+
 }
 
