@@ -16,6 +16,11 @@ public class UserService {
     )
     );
 
+    public List<MockUser> getUsers() {
+        return dummyUsers.stream()
+                .map(this::mapUser).toList();
+    }
+
     public MockUser getUser(String id) {
         for (MockUser user : dummyUsers) {
             if (user.getId().equals(id)) {
@@ -25,6 +30,15 @@ public class UserService {
         return null;
     }
 
+    public Boolean deleteUser(String id) {
+        for (int i = 0; i < dummyUsers.size(); i++) {
+            if (dummyUsers.get(i).getId().equals(id)) {
+                dummyUsers.remove(dummyUsers.get(i));
+                return true;
+            }
+        }
+        return false;
+    }
 
     public MockUser addUser(MockUser mockUser) {
         for (MockUser user : dummyUsers) {
@@ -35,6 +49,20 @@ public class UserService {
 
         this.dummyUsers.add(mockUser);
         return this.mapUser(mockUser);
+    }
+
+    public MockUser updateUser(MockUser mockUser,String id) {
+        for (MockUser user : dummyUsers) {
+            if (user.getId().equals(id)) {
+                if(mockUser.getPassword()!=null){
+                    user.setPassword(mockUser.getPassword());
+
+                }
+
+                return this.mapUser(user);
+            }
+        }
+        return null;
     }
 
     private MockUser mapUser(MockUser mockUser) {
