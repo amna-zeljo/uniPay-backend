@@ -17,7 +17,7 @@ public class CustomerController {
     // Dummy data - in a real app, this would come from a service
     private final User dummyCustomer = new User(
         "USR001", 
-        "John Doe", 
+        "Zeljo Manijak", 
         150.50, 
         25, 
         "customer",
@@ -31,13 +31,13 @@ public class CustomerController {
     }};
 
     /**
-     * Get customer information including QR code
-     * This endpoint supports your customer home page which displays user info and QR code
+     * section: to get customer information including QR code
+     * this endpoint supports the staff's customer home page which displays user info and QR code
      */
     @GetMapping("/{id}")
     public ResponseEntity<User> getCustomerInfo(@PathVariable String id) {
-        // In a real app, you would look up the user by ID
-        // For now, just return the dummy customer if the ID matches
+        // note to self: in a real app, change for proper function --> to look up the user by ID
+        // but for now, just return the dummy customer if the ID matches
         if (dummyCustomer.getId().equals(id)) {
             return ResponseEntity.ok(dummyCustomer);
         }
@@ -45,16 +45,21 @@ public class CustomerController {
     }
 
     /**
-     * Get customer transaction history
-     * This endpoint supports the transaction history tab in your customer home page
+     * section: to get customer transaction history
+     * this endpoint supports the transaction history tab in customer home page
      */
     @GetMapping("/{id}/transactions")
     public ResponseEntity<List<Transaction>> getCustomerTransactions(@PathVariable String id) {
-        // In a real app, you would filter transactions by user ID
-        // For now, just return the dummy transactions if the ID matches
+        // note to self: in a real app, change for proper function --> to filter transactions by user ID
+        // but for now, just return the dummy transactions if the ID matches
         if (dummyCustomer.getId().equals(id)) {
             return ResponseEntity.ok(dummyTransactions);
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("")
+    public ResponseEntity<String> defaultMessage() {
+        return ResponseEntity.ok("Customer endpoint is active.");
     }
 }
