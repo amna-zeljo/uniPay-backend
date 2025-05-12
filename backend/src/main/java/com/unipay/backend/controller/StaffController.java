@@ -102,4 +102,9 @@ public class StaffController {
         
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("")
+    public ResponseEntity<String> defaultMessage() {
+        return ResponseEntity.ok("Staff endpoint is active.");
+    }
 }
