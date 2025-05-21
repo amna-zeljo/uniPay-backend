@@ -25,5 +25,14 @@ public class UserController {
         return ResponseEntity.ok(userDTO);
     }
 
+    @GetMapping("/register")
+    public ResponseEntity<UserDTO> register(@RequestBody UserDTO userDTO) {
+        UserDTO newUserDTO=userService.register(userDTO);
+        if(newUserDTO==null) {
+            return ResponseEntity.internalServerError().build();
+        }
+        return ResponseEntity.ok(newUserDTO);
+    }
+
 }
 

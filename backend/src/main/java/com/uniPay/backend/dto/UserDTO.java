@@ -8,6 +8,16 @@ public class UserDTO {
     private String username;
     private String email;
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    private String password;
+
     public UserDTO(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
