@@ -1,43 +1,49 @@
 package com.unipay.backend.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "staff")
 public class Staff {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    
-    @Column(name = "user_id", nullable = false)
-    private Integer userId;
-    
-    @Column(name = "first_name", nullable = false)
+
+    @Column(name = "first_name")
     private String firstName;
-    
-    @Column(name = "last_name", nullable = false)
+
+    @Column(name = "last_name")
     private String lastName;
-    
-    @Column(nullable = false)
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "position")
     private String position;
-    
+
+    @Column(name = "department")
     private String department;
-    
-    @Column(name = "hire_date")
-    private LocalDateTime hireDate;
-    
-    private String status;
-    
-    @ManyToOne
-    @JoinColumn(name = "user_id", insertable = false, updatable = false)
-    private User user;
-    
+
+    @Column(name = "created_at")
+    private Date createdAt;
+
+    @Column(name = "updated_at")
+    private Date updatedAt;
+
     public Staff() {
     }
-    
-    
 
+    public Staff(String firstName, String lastName, String email, String position, String department) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.position = position;
+        this.department = department;
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
 
     public Integer getId() {
         return id;
@@ -45,14 +51,6 @@ public class Staff {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
     }
 
     public String getFirstName() {
@@ -71,6 +69,14 @@ public class Staff {
         this.lastName = lastName;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getPosition() {
         return position;
     }
@@ -87,27 +93,19 @@ public class Staff {
         this.department = department;
     }
 
-    public LocalDateTime getHireDate() {
-        return hireDate;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setHireDate(LocalDateTime hireDate) {
-        this.hireDate = hireDate;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public String getStatus() {
-        return status;
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

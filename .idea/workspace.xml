@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c6d176a3-b86b-4be4-be5f-4f50f98695d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/controller/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/controller/HomePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/dto/AnnouncementDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/dto/AnnouncementDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/dto/CustomerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/dto/StaffDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/dto/StaffDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/entity/Announcement.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/entity/Announcement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/entity/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/entity/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/entity/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/entity/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/repository/AnnouncementRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/repository/AnnouncementRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/repository/StaffRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/repository/StaffRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/repository/WalletRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/repository/WalletRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/service/HomePageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/unipay/backend/service/HomePageService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;amna-zeljo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/amna-zeljo/uniPay-backend.git&quot;,
+    &quot;accountId&quot;: &quot;4bced0ee-aa5e-4594-8666-bd307d95971e&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2xMg6yIb65VIPiiWUWaSWWZfabK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.BackendApplication.executor": "Run",
+    "git-widget-placeholder": "feature/home-pages",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/KORISNIK/Documents/GitHub/uniPay-backend/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.uniPay.backend.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6d176a3-b86b-4be4-be5f-4f50f98695d6" name="Changes" comment="" />
+      <created>1747753189426</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747753189426</updated>
+      <workItem from="1747753194354" duration="737000" />
+      <workItem from="1747755833224" duration="3410000" />
+      <workItem from="1747851324497" duration="871000" />
+      <workItem from="1747852233030" duration="80000" />
+      <workItem from="1747852344249" duration="60000" />
+      <workItem from="1747852438231" duration="109000" />
+      <workItem from="1747852568941" duration="162000" />
+      <workItem from="1747853355558" duration="48000" />
+      <workItem from="1747853815961" duration="1381000" />
+      <workItem from="1747875932804" duration="37000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,21 +1,23 @@
 package com.unipay.backend.dto;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
-public class StaffHomePageDTO {
+public class StaffDTO {
+    private Integer userId;
     private String firstName;
     private String lastName;
     private String position;
     private String department;
-    private LocalDateTime hireDate;
     private List<AnnouncementDTO> announcements;
-    
-    
-    public StaffHomePageDTO() {
+
+    public Integer getUserId() {
+        return userId;
     }
-    
-    
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -46,14 +48,6 @@ public class StaffHomePageDTO {
 
     public void setDepartment(String department) {
         this.department = department;
-    }
-
-    public LocalDateTime getHireDate() {
-        return hireDate;
-    }
-
-    public void setHireDate(LocalDateTime hireDate) {
-        this.hireDate = hireDate;
     }
 
     public List<AnnouncementDTO> getAnnouncements() {

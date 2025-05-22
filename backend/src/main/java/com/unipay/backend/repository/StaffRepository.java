@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StaffRepository extends JpaRepository<Staff, Integer> {
-    Staff findByUserId(Integer userId);
+    //UPDATED ATTEMPTED FIX -- removed findByUserId because there's no 'userId' property in Staff entity
 }

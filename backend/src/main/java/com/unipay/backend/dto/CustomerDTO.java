@@ -2,7 +2,7 @@ package com.unipay.backend.dto;
 
 import java.util.List;
 
-public class CustomerHomePageDTO {
+public class CustomerDTO {
     private Integer userId;
     private String firstName;
     private String lastName;
@@ -11,12 +11,12 @@ public class CustomerHomePageDTO {
     private Integer walletPoints;
     private List<AnnouncementDTO> announcements;
 
-    // Constructors
-    public CustomerHomePageDTO() {
+
+    public CustomerDTO() {
     }
 
-    public CustomerHomePageDTO(Integer userId, String firstName, String lastName, String studentId, 
-                              Double walletBalance, Integer walletPoints, List<AnnouncementDTO> announcements) {
+    public CustomerDTO(Integer userId, String firstName, String lastName, String studentId, 
+                      Double walletBalance, Integer walletPoints, List<AnnouncementDTO> announcements) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,7 +26,7 @@ public class CustomerHomePageDTO {
         this.announcements = announcements;
     }
 
-    // Getters and Setters
+    
     public Integer getUserId() {
         return userId;
     }

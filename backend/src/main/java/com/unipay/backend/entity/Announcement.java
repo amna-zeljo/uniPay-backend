@@ -1,45 +1,42 @@
 package com.unipay.backend.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "announcements")
 public class Announcement {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    
-    @Column(nullable = false)
+
+    @Column(name = "title")
     private String title;
-    
-    @Column(nullable = false, columnDefinition = "TEXT")
+
+    @Column(name = "content")
     private String content;
-    
-    @Column(name = "target_audience", nullable = false)
-    private String targetAudience;
-    
+
     @Column(name = "created_at")
-    private LocalDateTime createdAt;
-    
-    @Column(name = "expires_at")
-    private LocalDateTime expiresAt;
-    
-    @Column(name = "is_active")
-    private Boolean isActive;
-    
-    @Column(name = "created_by")
-    private Integer createdBy;
-    
+    private Date createdAt;
+
+    @Column(name = "updated_at")
+    private Date updatedAt;
+
     @ManyToOne
-    @JoinColumn(name = "created_by", insertable = false, updatable = false)
+    @JoinColumn(name = "creator_id")
     private Staff creator;
-    
 
     public Announcement() {
     }
-    
-    
+
+    public Announcement(String title, String content, Staff creator) {
+        this.title = title;
+        this.content = content;
+        this.creator = creator;
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
 
     public Integer getId() {
         return id;
@@ -65,44 +62,20 @@ public class Announcement {
         this.content = content;
     }
 
-    public String getTargetAudience() {
-        return targetAudience;
-    }
-
-    public void setTargetAudience(String targetAudience) {
-        this.targetAudience = targetAudience;
-    }
-
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getExpiresAt() {
-        return expiresAt;
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setExpiresAt(LocalDateTime expiresAt) {
-        this.expiresAt = expiresAt;
-    }
-
-    public Boolean getIsActive() {
-        return isActive;
-    }
-
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
-    }
-
-    public Integer getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(Integer createdBy) {
-        this.createdBy = createdBy;
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public Staff getCreator() {

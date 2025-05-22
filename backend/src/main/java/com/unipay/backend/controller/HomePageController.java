@@ -1,7 +1,7 @@
 package com.unipay.backend.controller;
 
-import com.unipay.backend.dto.CustomerHomePageDTO;
-import com.unipay.backend.dto.StaffHomePageDTO;
+import com.unipay.backend.dto.CustomerDTO;
+import com.unipay.backend.dto.StaffDTO;
 import com.unipay.backend.service.HomePageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/home")
+@RequestMapping("/api/homepage")
 @CrossOrigin(origins = "*")
 public class HomePageController {
 
@@ -21,14 +21,14 @@ public class HomePageController {
     }
 
     @GetMapping("/customer/{userId}")
-    public ResponseEntity<CustomerHomePageDTO> getCustomerHomePageData(@PathVariable Integer userId) {
-        CustomerHomePageDTO data = homePageService.getCustomerHomePageData(userId);
-        return ResponseEntity.ok(data);
+    public ResponseEntity<CustomerDTO> getCustomerHomePageData(@PathVariable Integer userId) {
+        CustomerDTO customerDTO = homePageService.getCustomerHomePageData(userId);
+        return ResponseEntity.ok(customerDTO);
     }
 
     @GetMapping("/staff/{userId}")
-    public ResponseEntity<StaffHomePageDTO> getStaffHomePageData(@PathVariable Integer userId) {
-        StaffHomePageDTO data = homePageService.getStaffHomePageData(userId);
-        return ResponseEntity.ok(data);
+    public ResponseEntity<StaffDTO> getStaffHomePageData(@PathVariable Integer userId) {
+        StaffDTO staffDTO = homePageService.getStaffHomePageData(userId);
+        return ResponseEntity.ok(staffDTO);
     }
 }

@@ -1,60 +1,55 @@
 package com.unipay.backend.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "customers")
 public class Customer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    
-    @Column(name = "user_id", nullable = false)
-    private Integer userId;
-    
-    @Column(name = "first_name", nullable = false)
+
+    @Column(name = "first_name")
     private String firstName;
-    
-    @Column(name = "last_name", nullable = false)
+
+    @Column(name = "last_name")
     private String lastName;
-    
-    @Column(name = "student_id", unique = true)
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "student_id")
     private String studentId;
-    
-    private String faculty;
-    
-    @Column(name = "registration_date")
-    private LocalDateTime registrationDate;
-    
-    private String status;
-    
-    @ManyToOne
-    @JoinColumn(name = "user_id", insertable = false, updatable = false)
-    private User user;
-    
 
+    @Column(name = "created_at")
+    private Date createdAt;
 
-    public Customer() {
+    @Column(name = "updated_at")
+    private Date updatedAt;
+
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private Wallet wallet;
+
+    public Customer() {}
+
+    public Customer(String firstName, String lastName, String email, String studentId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.studentId = studentId;
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
     }
-    
-    
 
-
-    public Integer getId() {
+   public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
     }
 
     public String getFirstName() {
@@ -73,6 +68,14 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getStudentId() {
         return studentId;
     }
@@ -81,35 +84,27 @@ public class Customer {
         this.studentId = studentId;
     }
 
-    public String getFaculty() {
-        return faculty;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setFaculty(String faculty) {
-        this.faculty = faculty;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public LocalDateTime getRegistrationDate() {
-        return registrationDate;
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setRegistrationDate(LocalDateTime registrationDate) {
-        this.registrationDate = registrationDate;
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getStatus() {
-        return status;
+    public Wallet getWallet() {
+        return wallet;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setWallet(Wallet wallet) {
+        this.wallet = wallet;
     }
 }

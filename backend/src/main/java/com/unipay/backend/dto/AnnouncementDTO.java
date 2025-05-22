@@ -1,21 +1,14 @@
 package com.unipay.backend.dto;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class AnnouncementDTO {
     private Integer id;
     private String title;
     private String content;
-    private String targetAudience;
-    private LocalDateTime createdAt;
-    private LocalDateTime expiresAt;
+    private Date createdAt;
     private String creatorName;
-    
-    
-    public AnnouncementDTO() {
-    }
-    
-    
+
     public Integer getId() {
         return id;
     }
@@ -40,28 +33,12 @@ public class AnnouncementDTO {
         this.content = content;
     }
 
-    public String getTargetAudience() {
-        return targetAudience;
-    }
-
-    public void setTargetAudience(String targetAudience) {
-        this.targetAudience = targetAudience;
-    }
-
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getExpiresAt() {
-        return expiresAt;
-    }
-
-    public void setExpiresAt(LocalDateTime expiresAt) {
-        this.expiresAt = expiresAt;
     }
 
     public String getCreatorName() {

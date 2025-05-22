@@ -1,36 +1,36 @@
 package com.unipay.backend.entity;
 
 import jakarta.persistence.*;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "wallets")
 public class Wallet {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    
-    @Column(name = "user_id", nullable = false)
-    private Integer userId;
-    
-    private BigDecimal balance;
-    
+
+    @Column(name = "balance")
+    private Double balance;
+
+    @Column(name = "points")
     private Integer points;
-    
+
     @Column(name = "last_updated")
-    private LocalDateTime lastUpdated;
-    
-    @ManyToOne
-    @JoinColumn(name = "user_id", insertable = false, updatable = false)
-    private User user;
-    
-    
+    private Date lastUpdated;
+
+    @OneToOne(mappedBy = "wallet")
+    private Customer customer; // optional: reverse reference
+
     public Wallet() {
     }
-    
-    
 
+    public Wallet(Double balance, Integer points) {
+        this.balance = balance;
+        this.points = points;
+        this.lastUpdated = new Date();
+    }
 
     public Integer getId() {
         return id;
@@ -40,19 +40,11 @@ public class Wallet {
         this.id = id;
     }
 
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public BigDecimal getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
@@ -64,19 +56,19 @@ public class Wallet {
         this.points = points;
     }
 
-    public LocalDateTime getLastUpdated() {
+    public Date getLastUpdated() {
         return lastUpdated;
     }
 
-    public void setLastUpdated(LocalDateTime lastUpdated) {
+    public void setLastUpdated(Date lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
-    public User getUser() {
-        return user;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }
