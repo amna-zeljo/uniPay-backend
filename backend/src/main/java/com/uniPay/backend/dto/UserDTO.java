@@ -8,6 +8,19 @@ public class UserDTO {
     private String username;
     private String email;
 
+    public UserDTO() {
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    private String role;
+
     public String getPassword() {
         return password;
     }
@@ -22,6 +35,7 @@ public class UserDTO {
         this.id = user.getId();
         this.username = user.getUsername();
         this.email = user.getEmail();
+        this.role = user.getRole();
     }
 
     public Long getId() {
