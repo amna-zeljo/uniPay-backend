@@ -1,6 +1,6 @@
-package com.uniPay.backend.dto;
+package com.unipay.backend.dto;
 
-import com.uniPay.backend.entity.User;
+import com.unipay.backend.entity.User;
 import jakarta.persistence.Column;
 
 public class UserDTO {

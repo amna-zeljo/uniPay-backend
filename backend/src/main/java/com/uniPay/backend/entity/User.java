@@ -1,4 +1,4 @@
-package com.uniPay.backend.entity;
+package com.unipay.backend.entity;
 
 
 import jakarta.persistence.*;

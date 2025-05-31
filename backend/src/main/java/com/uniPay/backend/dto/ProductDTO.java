@@ -1,6 +1,6 @@
-package com.uniPay.backend.dto;
+package com.unipay.backend.dto;
 
-import com.uniPay.backend.entity.Product;
+import com.unipay.backend.entity.Product;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 

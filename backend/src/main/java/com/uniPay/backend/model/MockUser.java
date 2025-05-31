@@ -1,4 +1,4 @@
-package com.uniPay.backend.model;
+package com.unipay.backend.model;
 
 public class MockUser {
     private String id;

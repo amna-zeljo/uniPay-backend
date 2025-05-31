@@ -1,6 +1,6 @@
-package com.uniPay.backend.service;
+package com.unipay.backend.service;
 
-import com.uniPay.backend.model.MenuItem;
+import com.unipay.backend.model.MenuItem;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

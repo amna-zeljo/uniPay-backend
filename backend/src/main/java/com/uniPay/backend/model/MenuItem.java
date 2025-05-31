@@ -1,4 +1,4 @@
-package com.uniPay.backend.model;
+package com.unipay.backend.model;
 
 public class MenuItem {
     private String id;

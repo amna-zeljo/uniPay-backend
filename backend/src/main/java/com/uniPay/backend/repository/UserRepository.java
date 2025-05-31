@@ -1,6 +1,6 @@
-package com.uniPay.backend.repository;
+package com.unipay.backend.repository;
 
-import com.uniPay.backend.entity.User;
+import com.unipay.backend.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

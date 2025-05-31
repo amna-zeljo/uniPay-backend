@@ -1,8 +1,8 @@
-package com.uniPay.backend.controller;
+package com.unipay.backend.controller;
 
-import com.uniPay.backend.dto.UserDTO;
-import com.uniPay.backend.model.MockUser;
-import com.uniPay.backend.service.UserService;
+import com.unipay.backend.dto.UserDTO;
+import com.unipay.backend.model.MockUser;
+import com.unipay.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +11,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:54102")
 @RestController
+@RequestMapping("/api")
 public class UserController {
 
     @Autowired

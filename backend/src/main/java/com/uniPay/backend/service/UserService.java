@@ -1,9 +1,9 @@
-package com.uniPay.backend.service;
+package com.unipay.backend.service;
 
-import com.uniPay.backend.dto.UserDTO;
-import com.uniPay.backend.entity.User;
-import com.uniPay.backend.model.MockUser;
-import com.uniPay.backend.repository.UserRepository;
+import com.unipay.backend.dto.UserDTO;
+import com.unipay.backend.entity.User;
+import com.unipay.backend.model.MockUser;
+import com.unipay.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

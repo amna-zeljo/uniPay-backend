@@ -1,4 +1,4 @@
-package com.uniPay.backend;
+package com.unipay.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

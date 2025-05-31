@@ -1,8 +1,8 @@
-package com.uniPay.backend.service;
+package com.unipay.backend.service;
 
-import com.uniPay.backend.dto.ProductDTO;
-import com.uniPay.backend.entity.Product;
-import com.uniPay.backend.repository.ProductRepository;
+import com.unipay.backend.dto.ProductDTO;
+import com.unipay.backend.entity.Product;
+import com.unipay.backend.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
