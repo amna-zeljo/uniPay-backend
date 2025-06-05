@@ -4,15 +4,9 @@ import com.unipay.backend.dto.AnnouncementDTO;
 import com.unipay.backend.dto.CustomerDTO;
 import com.unipay.backend.dto.StaffDTO;
 
-import com.unipay.backend.entity.Announcement;
-import com.unipay.backend.entity.Customer;
-import com.unipay.backend.entity.Staff;
-import com.unipay.backend.entity.Wallet;
+import com.unipay.backend.entity.*;
 
-import com.unipay.backend.repository.AnnouncementRepository;
-import com.unipay.backend.repository.CustomerRepository;
-import com.unipay.backend.repository.StaffRepository;
-import com.unipay.backend.repository.WalletRepository;
+import com.unipay.backend.repository.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,32 +23,34 @@ public class HomePageService {
     private final StaffRepository staffRepository;
     private final WalletRepository walletRepository;
     private final AnnouncementRepository announcementRepository;
+    private final UserRepository userRepository;
 
     @Autowired
     public HomePageService(CustomerRepository customerRepository,
                            StaffRepository staffRepository,
                            WalletRepository walletRepository,
-                           AnnouncementRepository announcementRepository) {
+                           AnnouncementRepository announcementRepository, UserRepository userRepository) {
         this.customerRepository = customerRepository;
         this.staffRepository = staffRepository;
         this.walletRepository = walletRepository;
         this.announcementRepository = announcementRepository;
+        this.userRepository = userRepository;
     }
 
     public CustomerDTO getCustomerHomePageData(Integer userId) {
         CustomerDTO dto = new CustomerDTO();
 
         //to find customer by userId
-        Optional<Customer> customerOpt = customerRepository.findById(userId);
-        if (customerOpt.isPresent()) {
-            Customer customer = customerOpt.get();
+        Optional<User> userOpt = userRepository.findById(Long.valueOf(userId));
+        if (userOpt.isPresent() && userOpt.get().getCustomer() != null) {
+            Customer customer = userOpt.get().getCustomer();
             dto.setUserId(customer.getId());
             dto.setFirstName(customer.getFirstName());
             dto.setLastName(customer.getLastName());
             dto.setStudentId(customer.getStudentId());
 
             //to get wallet information
-            Optional<Wallet> walletOpt = walletRepository.findByCustomer_Id(userId);
+            Optional<Wallet> walletOpt = walletRepository.findByUserId(userId);
 
             walletOpt.ifPresent(wallet -> {
                 dto.setWalletBalance(wallet.getBalance());

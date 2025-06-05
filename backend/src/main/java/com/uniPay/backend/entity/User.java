@@ -29,6 +29,15 @@ public class User {
     @Column(name = "qr_code")
     private String qrcode;
 
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    private Customer customer;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    private Wallet wallet;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    private Staff staff;
+
     public User() {
     }
 
@@ -102,5 +111,29 @@ public class User {
 
     public void setQrcode(String qrcode) {
         this.qrcode = qrcode;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Staff getStaff() {
+        return staff;
+    }
+
+    public void setStaff(Staff staff) {
+        this.staff = staff;
+    }
+
+    public Wallet getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(Wallet wallet) {
+        this.wallet = wallet;
     }
 }

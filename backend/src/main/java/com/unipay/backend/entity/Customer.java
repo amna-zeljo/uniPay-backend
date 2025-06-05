@@ -29,9 +29,11 @@ public class Customer {
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @OneToOne
+
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private Wallet wallet;
+    private User user;
+
 
     public Customer() {}
 
@@ -100,11 +102,11 @@ public class Customer {
         this.updatedAt = updatedAt;
     }
 
-    public Wallet getWallet() {
-        return wallet;
+    public User getUser() {
+        return user;
     }
 
-    public void setWallet(Wallet wallet) {
-        this.wallet = wallet;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

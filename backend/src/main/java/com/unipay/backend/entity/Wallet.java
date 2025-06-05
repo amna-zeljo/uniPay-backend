@@ -20,8 +20,9 @@ public class Wallet {
     @Column(name = "last_updated")
     private Date lastUpdated;
 
-    @OneToOne(mappedBy = "wallet")
-    private Customer customer; // optional: reverse reference
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
 
     public Wallet() {
     }
@@ -64,11 +65,11 @@ public class Wallet {
         this.lastUpdated = lastUpdated;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public User getUser() {
+        return user;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
