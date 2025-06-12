@@ -19,18 +19,15 @@ import java.util.stream.Collectors;
 @Service
 public class HomePageService {
 
-    private final CustomerRepository customerRepository;
     private final StaffRepository staffRepository;
     private final WalletRepository walletRepository;
     private final AnnouncementRepository announcementRepository;
     private final UserRepository userRepository;
 
     @Autowired
-    public HomePageService(CustomerRepository customerRepository,
-                           StaffRepository staffRepository,
+    public HomePageService(StaffRepository staffRepository,
                            WalletRepository walletRepository,
                            AnnouncementRepository announcementRepository, UserRepository userRepository) {
-        this.customerRepository = customerRepository;
         this.staffRepository = staffRepository;
         this.walletRepository = walletRepository;
         this.announcementRepository = announcementRepository;
@@ -41,7 +38,7 @@ public class HomePageService {
         CustomerDTO dto = new CustomerDTO();
 
         //to find customer by userId
-        Optional<User> userOpt = userRepository.findById(Long.valueOf(userId));
+        Optional<User> userOpt = userRepository.findUserById(Long.valueOf(userId));
         if (userOpt.isPresent() && userOpt.get().getCustomer() != null) {
             Customer customer = userOpt.get().getCustomer();
             dto.setUserId(customer.getId());
