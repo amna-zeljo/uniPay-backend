@@ -1,7 +1,9 @@
 package com.unipay.backend.controller;
 
 import com.unipay.backend.dto.ProductDTO;
+import com.unipay.backend.dto.TransactionDTO;
 import com.unipay.backend.entity.Product;
+import com.unipay.backend.entity.Transaction;
 import com.unipay.backend.model.MenuItem;
 import com.unipay.backend.service.MenuItemService;
 import com.unipay.backend.service.ProductService;
@@ -29,6 +31,16 @@ public class ProductController {
 
         ProductDTO newProductDTO = productService.createProduct(productDTO);
         return ResponseEntity.ok(newProductDTO);
+    }
+
+    @PostMapping("/purchase/{productId}/{userId}")
+    public ResponseEntity<TransactionDTO> purchaseProduct(@PathVariable Long productId, @PathVariable Long userId) {
+
+        TransactionDTO transactionDTO = productService.purchaseProduct(userId, productId);
+        if(transactionDTO == null) {
+            return ResponseEntity.badRequest().build();
+        }
+        return ResponseEntity.ok(transactionDTO);
     }
 
     @PutMapping
